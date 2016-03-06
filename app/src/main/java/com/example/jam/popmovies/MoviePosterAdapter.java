@@ -32,7 +32,10 @@ public class MoviePosterAdapter extends ArrayAdapter<MoviePoster> {
         String posterAddress="http://image.tmdb.org/t/p/w185/"+moviePoster.poster;
         Log.v(LOG_TAG, "Poster Address::"+ posterAddress);
         posterView.setTag(moviePoster.id);
-        Picasso.with(getContext()).load(posterAddress).into(posterView);
+        Picasso.with(getContext()).load(posterAddress).
+                placeholder(R.drawable.placeholder).
+                error(R.drawable.warningerror).
+                into(posterView);
         return convertView;
     }
 

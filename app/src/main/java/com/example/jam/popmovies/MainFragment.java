@@ -41,7 +41,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View frag_root_view = inflater.inflate(R.layout.fragment_main, container, false);
-        moviePosterAdapter = new MoviePosterAdapter(getActivity(), new ArrayList<MoviePoster>(Arrays.asList(sampleMovies)));
+        moviePosterAdapter = new MoviePosterAdapter(getActivity(), new ArrayList<>(Arrays.asList(sampleMovies)));
         GridView gridView = (GridView) frag_root_view.findViewById(R.id.poster_grid);
         gridView.setAdapter(moviePosterAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -74,9 +74,8 @@ public class MainFragment extends Fragment {
             try {
                 final String BASE_URL = "http://api.themoviedb.org/3/movie/"+params[0]+"/";
                 final String APPID_PARAM = "api_key";
-                Uri uri=null;
-                uri = Uri.parse(BASE_URL).buildUpon()
-                     .appendQueryParameter(APPID_PARAM, "bullshitsadafdshgdjsgjasg").build();
+                Uri uri= Uri.parse(BASE_URL).buildUpon()
+                     .appendQueryParameter(APPID_PARAM, "must put correct api key here").build();
                 URL url = new URL(uri.toString());
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
@@ -124,7 +123,7 @@ public class MainFragment extends Fragment {
             final String RESULTS = "results";
             JSONObject moviesJson = new JSONObject(movieJsonStr);
             JSONArray moviesJsonArray = moviesJson.getJSONArray(RESULTS);
-            ArrayList<MoviePoster> newMovies =new ArrayList<MoviePoster>();
+            ArrayList<MoviePoster> newMovies =new ArrayList<>();
             for(int i=0;i<moviesJsonArray.length();i++) {
                 JSONObject movieJsonObject=moviesJsonArray.getJSONObject(i);
                 String poster_path = movieJsonObject.getString("poster_path");
