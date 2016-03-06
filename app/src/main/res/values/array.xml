@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_sort_title">
+        <item>Popularity</item>
+        <item>User Rating</item>
+        <item>Now in Cinemas</item>
+        <item>Upcoming Movies</item>
+    </string-array>
+    <string-array name="list_sort_value">
+        <item>popular</item>
+        <item>top_rated</item>
+        <item>now_playing</item>
+        <item>upcoming</item>
+    </string-array>
+</resources>
