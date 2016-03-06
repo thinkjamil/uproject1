@@ -75,7 +75,7 @@ public class MainFragment extends Fragment {
                 final String BASE_URL = "http://api.themoviedb.org/3/movie/"+params[0]+"/";
                 final String APPID_PARAM = "api_key";
                 Uri uri= Uri.parse(BASE_URL).buildUpon()
-                     .appendQueryParameter(APPID_PARAM, "must put correct api key here").build();
+                     .appendQueryParameter(APPID_PARAM, "api key here").build();
                 URL url = new URL(uri.toString());
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");

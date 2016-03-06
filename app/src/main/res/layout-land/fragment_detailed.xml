@@ -10,7 +10,7 @@
         android:padding="@dimen/activity_vertical_margin">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -20,55 +20,58 @@
             android:gravity="center"
             style="@style/Base.TextAppearance.AppCompat.Title"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/poster_imageView_detail"
+            android:layout_toEndOf="@+id/poster_imageView_detail" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/poster_imageView_detail"
-            android:layout_below="@id/original_title_textView_detail"
             android:layout_alignParentLeft="true"
-            android:maxHeight="200dp"
-            style="@style/Base.Theme.AppCompat"
+            android:src="@drawable/placeholder"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
             android:layout_alignParentStart="true"
-            android:adjustViewBounds="true"/>
+            android:layout_alignParentTop="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/released_placeholder"
             style="@style/Base.TextAppearance.AppCompat"
             android:id="@+id/releae_date_textView_detail"
-            android:layout_below="@id/poster_imageView_detail"/>
+            android:layout_marginRight="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_below="@id/original_title_textView_detail"
+            android:layout_alignParentRight="true"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/rating_placeholder"
-            style="@style/Base.TextAppearance.AppCompat"
-            android:id="@+id/user_rating_textView_detail"
-            android:layout_below="@+id/poster_imageView_detail"
-            android:layout_alignRight="@id/poster_imageView_detail"
-            android:layout_alignEnd="@id/poster_imageView_detail"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
             style="@style/Base.TextAppearance.AppCompat.Body1"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/plot_placeholder"
             android:gravity="center"
+            android:width="400dip"
             android:id="@+id/plot_textView_detail"
-            android:layout_below="@id/releae_date_textView_detail"/>
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/poster_imageView_detail"
+            android:layout_toEndOf="@id/poster_imageView_detail"
+            android:layout_below="@+id/releae_date_textView_detail" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/rating_placeholder"
+            style="@style/Base.TextAppearance.AppCompat"
+            android:id="@+id/user_rating_textView_detail"
+            android:layout_alignLeft="@+id/plot_textView_detail"
+            android:layout_alignStart="@+id/plot_textView_detail"
+            android:layout_alignTop="@+id/releae_date_textView_detail"
+            android:layout_marginLeft="30dip" />
     </RelativeLayout>
 </ScrollView>
